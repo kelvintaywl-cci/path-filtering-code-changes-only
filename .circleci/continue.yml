@@ -16,6 +16,6 @@ jobs:
 
 workflows:
   run-tests:
-    condition: << pipeline.parameters.build-code >>
+    when: << pipeline.parameters.build-code >>
     jobs:
       - test
