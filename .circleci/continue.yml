@@ -1,0 +1,21 @@
+version: 2.1
+
+parameters:
+  build-code:
+    type: boolean
+    default: false
+
+jobs:
+  test:
+    resource_class: small
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo "TODO tests..."
+
+workflows:
+  run-tests:
+    condition: << pipeline.parameters.build-code >>
+    jobs:
+      - test
